@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mini Music Player</title>
+    <link href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap&subset=latin-ext"
+        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <h1>hello</h1>
+    <div class="wrapper" id="app">
+        <audio src="audio/1.mp3" ></audio>
+        <div class="player">
+            <div class="player__top">
+                <div class="player-cover">
+                    <div id="coverImage" class="player-cover__item" :style="  background-size: cover;
+                    'background-image: url(' + track.cover + ')'"></div>
+                </div>
+                <div class="player-controls">
+                    <div class="player-controls__item -favorite">
+                        <img src="favorite.png" width="40" height="40">
+                    </div>
+                    <div class="player-controls__item" id="perv">
+                        <img src="prev.png" width="40" height="40">
+                    </div>
+                    <div class="player-controls__item" id="next">
+                        <img src="next.png" width="40" height="40">
+                    </div>
+                    <div class="player-controls__item -xl js-play" id="play-pause">
+                        <img src="play.png" id="play-icon">
+                    </div>
+                    <br>
+                    <div style="display: flex; justify-content: space-between;">
+                        <div class="player-controls__item -mute" id="mute">
+                            <img src="mute.png" id="mute-icon">
+                        </div>
+                        <div class="player-controls__item -repeat" id="repeat">
+                            <img src="repeat.png" id="repeat-icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="progress" ref="progress">
+                <div class="progress__top">
+                    <div class="album-info" v-if="currentTrack">
+                        <br><br><br><br>
+                        <div class="album-info__name" id="artist">artist</div>
+                        <br>
+                        <div class="album-info__track" id="track">track</div>
+                    </div>
+                    <div class="progress__duration" id="duration">00:00</div>
+                </div>
+
+                <div class="progress__bar">
+                    <div class="progress__current"></div>
+                </div>
+                <div class="progress__time" id="currentTime">00:00</div>
+            </div>
+
+            <script src="main.js"></script>
+            <script src="jsmediatags-master/dist/jsmediatags.min.js"></script>
+
 </body>
+
 </html>
