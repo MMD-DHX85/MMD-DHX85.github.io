@@ -182,6 +182,6 @@ document.addEventListener('keypress', spacePause);
 // nextBtn.addEventListener('click', next);
 // pervBtn.addEventListener('click', perv);
 window.addEventListener("load", function() {
-    alert("بازم خوش آمدی نفس😂❤❤");
+    alert("از ورودتان خرسند شدیم 💕🙃");
   });
 
