@@ -5,8 +5,8 @@
 var playPause = document.querySelector('#play-pause');
 var mute = document.querySelector('#mute');
 var repeat = document.querySelector('#repeat');
-var nextBtn = document.querySelector('#next');
-var pervBtn = document.querySelector('#perv');
+// var nextBtn = document.querySelector('#next');
+// var pervBtn = document.querySelector('#perv');
 var audio = document.querySelector('audio');
 var playIcon = document.querySelector('#play-icon');
 var muteIcon = document.querySelector('#mute-icon');
@@ -45,7 +45,7 @@ function togglePlayPause() {
 
 function toggleMute() {
     if (audio.muted) {
-        muteIcon.src = 'mute.png';
+        muteIcon.src = 'Mute.png';
         audio.muted = false;
     }
     else {
@@ -179,6 +179,6 @@ repeat.addEventListener('click', toggleRepeat);
 audio.addEventListener('loadedmetadata', metaData);
 audio.addEventListener('timeupdate', durationUpdate);
 document.addEventListener('keypress', spacePause);
-nextBtn.addEventListener('click', next);
-pervBtn.addEventListener('click', perv);
+// nextBtn.addEventListener('click', next);
+// pervBtn.addEventListener('click', perv);
 

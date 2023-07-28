@@ -291,7 +291,7 @@ body {
 .progress__current {
     height: inherit;
     position: absolute;
-    background: linear-gradient(to right, #01A53B, #00FFAA);
+    background: linear-gradient(to right, #6528F7, #A076F9);
     border-radius: 10px;
 }
 
