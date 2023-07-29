@@ -182,6 +182,7 @@ document.addEventListener('keypress', spacePause);
 // nextBtn.addEventListener('click', next);
 // pervBtn.addEventListener('click', perv);
 window.addEventListener("load", function() {
-    alert("از ورودتان خرسند شدیم 💕🙃");
+    alert(`از ورودتان خرسند شدیم 💕🙃
+    به این قطعه گوش فرا دهید`);
   });
 
