@@ -171,9 +171,12 @@ function spacePause(e) {
     }
 }
 
-function seek() {
-    var pBarWidth = progressBar.offsetWidth;
-    console.log(pBarWidth);
+function seek(e) {
+    var rect = progressBar.getBoundingClientRect();
+    var clicked = e.pageX - rect.left;
+    var ratio = clicked / rect.width;
+    audio.currentTime = ratio * duration;
+    play();    
 }
 
 ///////////////////******Events******//////////////////////
@@ -190,4 +193,5 @@ window.addEventListener("load", function() {
     alert(`از ورودتان خرسند شدیم 💕🙃
     به این قطعه گوش فرا دهید`);
   });
+  progressBar.addEventListener('click', seek);
 
