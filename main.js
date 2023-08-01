@@ -17,6 +17,8 @@ var durationTxt = document.querySelector('#duration');
 var currentTimeTxt = document.querySelector('#currentTime');
 var progressBar = document.querySelector('.progress__bar');
 var progressCurrent = document.querySelector('.progress__current');
+var duration = audio.duration;
+
 
 ///////////////////******Functions******//////////////////////
 
@@ -105,7 +107,6 @@ function metaData() {
 }
 
 function durationUpdate() {
-    var duration = audio.duration;
     var currentTime = audio.currentTime;
     durationTxt.innerHTML = secondToTime(duration);
     currentTimeTxt.innerHTML = secondToTime(currentTime);
