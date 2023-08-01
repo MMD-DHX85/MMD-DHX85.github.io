@@ -171,6 +171,11 @@ function spacePause(e) {
     }
 }
 
+function seek() {
+    var pBarWidth = progressBar.offsetWidth;
+    console.log(pBarWidth);
+}
+
 ///////////////////******Events******//////////////////////
 
 playPause.addEventListener('click', togglePlayPause);
