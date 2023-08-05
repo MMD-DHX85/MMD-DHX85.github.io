@@ -177,7 +177,7 @@ function seek(e) {
     var clicked = e.pageX - rect.left;
     var ratio = clicked / rect.width;
     audio.currentTime = ratio * duration;
-    play();    
+    play();
 }
 
 ///////////////////******Events******//////////////////////
@@ -194,5 +194,26 @@ pervBtn.addEventListener('click', perv);
 //     alert(`از ورودتان خرسند شدیم 💕🙃
 //     به این قطعه گوش فرا دهید`);
 //   });
-  progressBar.addEventListener('click', seek);
+progressBar.addEventListener('click', seek);
 
+
+///////////////////******data saving******//////////////////////
+
+var albums = [
+    firstAlbum={
+        name: "test",
+        artist: "Amir Tataloo",
+        year: "2012",
+        songNumber: 5,
+        songs: ['1.mp3', '2.mp3', '3.mp3', '4.mp3', '5.mp3']
+    },
+    secondAlbum={
+        name: "78",
+        artist: "Amir Tataloo",
+        year: "2019",
+        songNumber: 3,
+        songs: ['1.mp3', '2.mp3', '3.mp3']
+    }
+];
+
+localStorage.setItem('albums', JSON.stringify(albums));
