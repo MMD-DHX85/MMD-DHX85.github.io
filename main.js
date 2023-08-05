@@ -5,8 +5,8 @@
 var playPause = document.querySelector('#play-pause');
 var mute = document.querySelector('#mute');
 var repeat = document.querySelector('#repeat');
-// var nextBtn = document.querySelector('#next');
-// var pervBtn = document.querySelector('#perv');
+var nextBtn = document.querySelector('#next');
+var pervBtn = document.querySelector('#perv');
 var audio = document.querySelector('audio');
 var playIcon = document.querySelector('#play-icon');
 var muteIcon = document.querySelector('#mute-icon');
@@ -135,7 +135,7 @@ function next() {
     var src = audio.src;
     var track = parseInt(src.match(/\d+/)[0]);
     console.log(track);
-    if (track < 25) {
+    if (track < 5) {
         track++;
     }
     else {
@@ -155,9 +155,9 @@ function perv() {
         track--;
     }
     else {
-        track = 25;
+        track = 5;
     }
-    audio.src = `audio/${track}.mp3`;
+    audio.src = `albums/test/${track}.mp3`;
     progressCurrent.style.width = '0%';
     togglePlayPause();
 }
@@ -188,11 +188,11 @@ repeat.addEventListener('click', toggleRepeat);
 audio.addEventListener('loadedmetadata', metaData);
 audio.addEventListener('timeupdate', durationUpdate);
 document.addEventListener('keypress', spacePause);
-// nextBtn.addEventListener('click', next);
-// pervBtn.addEventListener('click', perv);
-window.addEventListener("load", function() {
-    alert(`از ورودتان خرسند شدیم 💕🙃
-    به این قطعه گوش فرا دهید`);
-  });
+nextBtn.addEventListener('click', next);
+pervBtn.addEventListener('click', perv);
+// window.addEventListener("load", function() {
+//     alert(`از ورودتان خرسند شدیم 💕🙃
+//     به این قطعه گوش فرا دهید`);
+//   });
   progressBar.addEventListener('click', seek);
 
