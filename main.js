@@ -141,7 +141,7 @@ function next() {
     else {
         track = 1;
     }
-    audio.src = `audio/${track}.mp3`;
+    audio.src = `albums/test/${track}.mp3`;
     progressCurrent.style.width = '0%';
     togglePlayPause();
 }
