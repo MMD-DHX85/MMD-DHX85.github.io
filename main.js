@@ -133,15 +133,19 @@ function secondToTime(second) {
 function next() {
 
     var src = audio.src;
-    var track = parseInt(src.match(/\d+/)[0]);
-    console.log(track);
-    if (track < 5) {
-        track++;
+    var current = src.split('/');
+    console.log(current); // `track` is now an array
+    var current = current.pop();
+    var current = Number(current.split('.')[0]);
+    console.log(current)
+
+    if (current < 5) {
+        var nextT = current + 1;
     }
     else {
-        track = 1;
+        var nextT =  1;
     }
-    audio.src = `albums/test/${track}.mp3`;
+    audio.src = `albums/test/${nextT}.mp3`;
     progressCurrent.style.width = '0%';
     togglePlayPause();
 }
@@ -149,15 +153,18 @@ function next() {
 function perv() {
 
     var src = audio.src;
-    var track = parseInt(src.match(/\d+/)[0]);
-    console.log(track);
-    if (track > 1) {
-        track--;
+    var current = src.split('/');
+    console.log(current); // `track` is now an array
+    var current = current.pop();
+    var current = Number(current.split('.')[0]);
+    console.log(current)
+    if (current > 1) {
+        var nextT = current - 1;
     }
     else {
-        track = 5;
+        var nextT =  5;
     }
-    audio.src = `albums/test/${track}.mp3`;
+    audio.src = `albums/test/${nextT}.mp3`;
     progressCurrent.style.width = '0%';
     togglePlayPause();
 }
@@ -200,14 +207,14 @@ progressBar.addEventListener('click', seek);
 ///////////////////******data saving******//////////////////////
 
 var albums = [
-    firstAlbum={
+    firstAlbum = {
         name: "test",
         artist: "Amir Tataloo",
         year: "2012",
         songNumber: 5,
         songs: ['1.mp3', '2.mp3', '3.mp3', '4.mp3', '5.mp3']
     },
-    secondAlbum={
+    secondAlbum = {
         name: "78",
         artist: "Amir Tataloo",
         year: "2019",
